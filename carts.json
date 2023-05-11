@@ -1,0 +1,16 @@
+[
+  {
+    "idCarrito": "edafaf3b-d9aa-4894-9cfb-b3f2be6af377",
+    "productos": []
+  },
+  {
+    "idCarrito": "0c9f7cc0-2024-4309-9420-0175e6788d7a",
+    "productos": []
+  },
+  {
+    "idCarrito": "e51f67ef-1242-48c1-be0a-b633329067d1",
+    "productos": [
+      123
+    ]
+  }
+]
