@@ -1,6 +1,5 @@
 import fs from "fs"
 import crypto from "crypto"
-import { Console } from "console"
 
 class CartsManager {
     constructor(path) {
@@ -41,14 +40,17 @@ class CartsManager {
         const prodSearch = products.find(pr => pr.id == idProduct)
         if (cartSearch && prodSearch) {
             let prodAcortado = cartSearch.productos
-            const cartPush = { "idCarrito": idCart, "productos": prodAcortado }
-            if (prodAcortado.idProduct == prodSearch) {
-                const nuevaCantidad = { "quantity": prodAcortado.quantity + 1 }
-                const nueva = prodAcortado.splice(1, 1, nuevaCantidad)
-                prodAcortado.push(nuevaCantidad)
+            let busProd = prodAcortado.find(pr => pr.id == idProduct)
+            let busProdIndex = this.carts.findIndex(bu => bu.idCarrito == idCart)
+            if (busProd) {
+                busProd.quantity++
+            } else {
+                prodAcortado.push({ "id": idProduct, "quantity": 1 })
             }
-
-            console.log(prodAcortado)
+            cartSearch.productos = prodAcortado
+            this.carts.slice(busProdIndex, 1, cartSearch)
+            const cartsString = JSON.stringify(this.carts, null, 2)
+            fs.writeFileSync(this.path, cartsString)
         } else {
             console.log("Verifique que los ID sean correctos")
         }
