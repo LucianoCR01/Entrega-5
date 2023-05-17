@@ -76,4 +76,4 @@ class ProductManager {
     }
 }
 
-export const productos = new ProductManager("./productos.json")
+export const productos = new ProductManager("./storage/data/DB/productos.json")

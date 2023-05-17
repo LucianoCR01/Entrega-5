@@ -6,7 +6,7 @@ export const cartsRouter = express.Router()
 cartsRouter.post("/", (req, res) => {
     return res.status(200).json({
         status: "success",
-        msg: "listado de productos",
+        msg: "Carrito Agregado",
         data: carts.newCart()
     })
 })
@@ -15,7 +15,7 @@ cartsRouter.get("/:cid", (req, res) => {
     const idCart = req.params.cid
     return res.status(200).json({
         status: "success",
-        msg: "Carrito agregado",
+        msg: "Carrito Buscado",
         data: carts.getCart(idCart)
     })
 })

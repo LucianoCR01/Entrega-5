@@ -35,7 +35,7 @@ class CartsManager {
 
     agregarProductos(idCart, idProduct) {
         const cartSearch = this.carts.find(ca => ca.idCarrito == idCart)
-        const productsString = fs.readFileSync("./productos.json", "utf-8")
+        const productsString = fs.readFileSync("./storage/data/DB/productos.json", "utf-8")
         const products = JSON.parse(productsString)
         const prodSearch = products.find(pr => pr.id == idProduct)
         if (cartSearch && prodSearch) {
@@ -57,4 +57,4 @@ class CartsManager {
     }
 
 }
-export const carts = new CartsManager("./carts.json")
+export const carts = new CartsManager("./storage/data/DB/carts.json")
