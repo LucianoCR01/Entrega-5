@@ -6,6 +6,8 @@
     "thumbnail": "Prueba",
     "code": 123,
     "stock": 200,
+    "category": "verdura",
+    "picture": "http://localhost:8080/manzana.jpg",
     "id": "69700210-731e-43d0-9a00-f9e8f31511b0"
   },
   {
@@ -15,6 +17,8 @@
     "thumbnail": "Prueba",
     "code": 134,
     "stock": 200,
+    "category": "verdura",
+    "picture": "http://localhost:8080/manzana.jpg",
     "id": "2bef3944-02ad-4aa3-a4cb-19159b9b911d"
   },
   {
@@ -24,6 +28,8 @@
     "thumbnail": "Prueba",
     "code": 9,
     "stock": 200,
+    "category": "verdura",
+    "picture": "http://localhost:8080/manzana.jpg",
     "id": "e6f5681f-9f78-4ce0-9747-5e1dee143874"
   },
   {
@@ -33,6 +39,8 @@
     "thumbnail": "Prueba",
     "code": 98,
     "stock": 200,
+    "category": "verdura",
+    "picture": "http://localhost:8080/manzana.jpg",
     "id": "84d08f5e-0860-4374-b6cb-f747d334eeea"
   },
   {
@@ -42,6 +50,8 @@
     "thumbnail": "Prueba",
     "code": 23,
     "stock": 123456,
+    "category": "verdura",
+    "picture": "http://localhost:8080/manzana.jpg",
     "id": "c2b20208-b1a2-4084-874a-752ab3de6b26"
   },
   {
@@ -52,7 +62,7 @@
     "status": "true",
     "stock": "50",
     "category": "verdura",
-    "picture": "http://localhost:8080/Capture001.png",
+    "picture": "http://localhost:8080/manzana.jpg",
     "id": "64a118c7-a675-46f4-a7c5-d0437627682f"
   },
   {
@@ -63,6 +73,7 @@
     "status": true,
     "stock": 50,
     "category": "verdura",
+    "picture": "http://localhost:8080/manzana.jpg",
     "id": "af08053f-d321-4101-8ed1-23a680e46966"
   }
 ]

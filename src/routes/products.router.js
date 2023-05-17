@@ -52,3 +52,4 @@ productsRouter.delete("/:pid", async (req, res) => {
     res.json(await productos.deleteProduct(idDelete))
 
 })
+
