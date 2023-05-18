@@ -5,5 +5,5 @@ export const handlebarsRouter = express.Router()
 
 handlebarsRouter.get("/", async (req, res) => {
     const arrayProd = await productos.getProducts()
-    return res.status(200).render("home", arrayProd)
+    return res.status(200).render("home", { arrayProd })
 })
