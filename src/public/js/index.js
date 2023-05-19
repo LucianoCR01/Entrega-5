@@ -11,29 +11,28 @@ const inputStock = document.getElementById("form-stock");
 const inputCategory = document.getElementById("form-category");
 const inputThumbnail = document.getElementById("form-thumbnail");
 
-socket.on("listProdSocke", (listProdSocke) => {
-    console.log(listProdSocke)
-    const productList = document.querySelector(".productListUpdated");
-    productList.innerHTML = `
-      ${listProdSocke
-            .map(
-                (product) => `
-        <tr>
-          <th scope="row">${product.id}</th>
-          <td>${product.title}</td>
-          <td>${product.description}</td>
-          <td>${product.price}</td>
-          <td>${product.code}</td>
-          <td>${product.stock}</td>
-          <td>${product.category}</td>
-          <td><img src="${product.thumbnail}" alt="${product.id}" title="Foto de ${product.title}" style="width: 50px; min-height: 100%; max-height: 50px;"></td>
-          <td><button type="button" class="btn btn-danger " onclick="deleteProduct(${product.id})">X</button></td>
-        </tr>
-      `
-            )
-            .join("")}
-    `;
-});
+// socket.on("listProdSocke", (listProdSocke) => {
+//     console.log(listProdSocke)
+//     const productList = document.querySelector(".productListUpdated");
+//     productList.innerHTML = `
+//       ${listProdSocke
+//             .map(
+//                 (product) => `
+//         <tr>
+//           <th scope="row">${product.id}</th>
+//           <td>${product.title}</td>
+//           <td>${product.description}</td>
+//           <td>${product.price}</td>
+//           <td>${product.code}</td>
+//           <td>${product.stock}</td>
+//           <td>${product.category}</td>
+//           <td><img src="${product.thumbnail}" alt="${product.id}" title="Foto de ${product.title}" style="width: 50px; min-height: 100%; max-height: 50px;"></td>
+//         </tr>
+//       `
+//             )
+//             .join("")}
+//     `;
+// });
 
 formProducts.onsubmit = (e) => {
     e.preventDefault();
@@ -47,7 +46,7 @@ formProducts.onsubmit = (e) => {
         category: inputCategory.value,
     };
     console.log(newProduct)
-    socket.emit("new-product", newProduct);
+    socket.emit("new-product", { newProduct });
     formProducts.reset();
 };
 
