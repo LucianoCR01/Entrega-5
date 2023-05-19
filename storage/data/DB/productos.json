@@ -70,5 +70,75 @@
     "category": "verdura",
     "picture": "http://localhost:8080/manzana.jpg",
     "id": "af08053f-d321-4101-8ed1-23a680e46966"
+  },
+  {
+    "title": "dasdasd",
+    "description": "asdasdas",
+    "price": 123123,
+    "thumbnail": "asdasdas",
+    "code": "134134134",
+    "stock": 134134,
+    "category": "sadasda",
+    "id": "1050376f-ecce-4ecb-aca7-c794d9a601af"
+  },
+  {
+    "title": "dasdasd",
+    "description": "asdasdas",
+    "price": 123124512,
+    "thumbnail": "3463462",
+    "code": "52345235235",
+    "stock": 346346,
+    "category": "3463463",
+    "id": "f136a8aa-e465-4f83-bd22-e4f4f33e3be9"
+  },
+  {
+    "title": "qwewqe",
+    "description": "qwewqewq",
+    "price": 1243125315,
+    "thumbnail": "24624624",
+    "code": "524652462",
+    "stock": 24624624,
+    "category": "24624624",
+    "id": "9f8b3913-7a38-400d-8036-e27da9ad0f6f"
+  },
+  {
+    "title": "asdasd",
+    "description": "asdasd",
+    "price": 2131234,
+    "thumbnail": "123412",
+    "code": "1424124",
+    "stock": 1424124,
+    "category": "412341234",
+    "id": "a2be969f-bd6e-48b4-a7f4-d99eebca048e"
+  },
+  {
+    "title": "wqeqwe",
+    "description": "qweqwe",
+    "price": 2141241324,
+    "thumbnail": "235245",
+    "code": "321523452",
+    "stock": 24524524,
+    "category": "235235",
+    "id": "979c52de-35e1-43b4-9af8-35ccbc8312fe"
+  },
+  {
+    "title": "dasdasd",
+    "description": "asdasd",
+    "price": 123124515,
+    "thumbnail": "56856",
+    "code": "58568568",
+    "stock": 56856856,
+    "category": "5685685",
+    "id": "9d979af4-afd5-43ae-8fad-36f85e6b4d23"
+  },
+  {
+    "title": "qweqwe",
+    "description": "12314251",
+    "price": 1325123523,
+    "thumbnail": "24352452",
+    "code": "23523523",
+    "stock": 23523523,
+    "category": "23523524",
+    "id": "efb31c61-6155-4403-a725-4c847a41a766"
   }
 ]

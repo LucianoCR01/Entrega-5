@@ -1,5 +1,6 @@
 //Codigo del FRONT
 
+
 const socket = io()
 
 const formProducts = document.getElementById("form-products");
@@ -11,28 +12,32 @@ const inputStock = document.getElementById("form-stock");
 const inputCategory = document.getElementById("form-category");
 const inputThumbnail = document.getElementById("form-thumbnail");
 
-// socket.on("listProdSocke", (listProdSocke) => {
-//     console.log(listProdSocke)
-//     const productList = document.querySelector(".productListUpdated");
-//     productList.innerHTML = `
-//       ${listProdSocke
-//             .map(
-//                 (product) => `
-//         <tr>
-//           <th scope="row">${product.id}</th>
-//           <td>${product.title}</td>
-//           <td>${product.description}</td>
-//           <td>${product.price}</td>
-//           <td>${product.code}</td>
-//           <td>${product.stock}</td>
-//           <td>${product.category}</td>
-//           <td><img src="${product.thumbnail}" alt="${product.id}" title="Foto de ${product.title}" style="width: 50px; min-height: 100%; max-height: 50px;"></td>
-//         </tr>
-//       `
-//             )
-//             .join("")}
-//     `;
-// });
+const formeliminar = document.getElementById("form-eliminar");
+const inputEliminar = document.getElementById("inputEliminar")
+
+
+socket.on("listProdSocke", listProdSocke => {
+    console.log(listProdSocke)
+    const productList = document.querySelector(".productListUpdated");
+    productList.innerHTML = `
+        ${listProdSocke
+            .map(
+                (product) => `
+         <tr>
+           <th scope="row">${product.id}</th>
+           <td>${product.title}</td>
+           <td>${product.description}</td>
+           <td>${product.price}</td>
+           <td>${product.code}</td>
+           <td>${product.stock}</td>
+             <td>${product.category}</td>
+            <td><img src="${product.thumbnail}" alt="${product.id}" title="Foto de ${product.title}" style="width: 50px; min-height: 100%; max-height: 50px;"></td>
+          </tr>
+        `
+            )
+            .join("")}
+      `;
+});
 
 formProducts.onsubmit = (e) => {
     e.preventDefault();
@@ -45,11 +50,14 @@ formProducts.onsubmit = (e) => {
         stock: +inputStock.value,
         category: inputCategory.value,
     };
-    console.log(newProduct)
-    socket.emit("new-product", { newProduct });
+
+    socket.emit("newProduct", newProduct);
     formProducts.reset();
 };
 
-deleteProduct = (productId) => {
-    socket.emit("delete-product", productId);
+formeliminar.onsubmit = (e) => {
+    e.preventDefault();
+    console.log(inputEliminar.value)
+    socket.emit("inputEliminar", inputEliminar.value);
+    formeliminar.reset();
 };

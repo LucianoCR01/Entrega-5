@@ -21,13 +21,16 @@ const socketServer = new Server(httpServer)
 
 //FRONT del socket
 //agregar Productos
-socketServer.on("connection", (socket) => {
+socketServer.on("connection", socket => {
     console.log("Se abrio un Socket " + socket.id)
-    socket.on("newProduct", async (newProduct) => {
-        console.log(newProduct)
+    socket.on("newProduct", async newProduct => {
         productos.addProduct(newProduct)
-        const listProdSocke = productos.getProducts()
+        const listProdSocke = await productos.getProducts()
         socket.emit("listProdSocke", listProdSocke)
+    })
+
+    socket.on("inputEliminar", inputEliminar => {
+        console.log(inputEliminar)
     })
 })
 

@@ -1,17 +1,19 @@
 <div>
     <h1>La lista de productos es: </h1>
-    {{#each arrayProd}}
-    <ul>
-        <li>Nombre : {{this.title}}</li>
-        <li>Descripcion : {{this.description}}</li>
-        <li>Precio : {{this.price}}</li>
-        <li>Code : {{this.code}}</li>
-        <li>Stock : {{this.stock}}</li>
-        <li>Categoria : {{this.category}}</li>
-        <li>Imagen : {{this.picture}}</li>
-        <li>ID : {{this.id}}</li>
-    </ul>
-    {{/each}}
+    <tbody class="productListUpdated">
+        {{#each arrayProd}}
+        <ul>
+            <li>Nombre : {{this.title}}</li>
+            <li>Descripcion : {{this.description}}</li>
+            <li>Precio : {{this.price}}</li>
+            <li>Code : {{this.code}}</li>
+            <li>Stock : {{this.stock}}</li>
+            <li>Categoria : {{this.category}}</li>
+            <li>Imagen : {{this.picture}}</li>
+            <li>ID : {{this.id}}</li>
+        </ul>
+        {{/each}}
+    </tbody>
 </div>
 <form id="form-products" style="margin: auto">
 
@@ -69,16 +71,17 @@
     </div>
 </form>
 
-<form>
+<form id="form-eliminar" style="margin: auto">
     <div>
         <label for="eliminar"> ID: </label>
         <br />
-        <input type="text" name="eliminar" id="form-eliminar" style="margin-bottom: 16px" class="form-control"
+        <input type="text" name="eliminar" id="inputEliminar" style="margin-bottom: 16px" class="form-control"
             placeholder="ID producto a eliminar" />
     </div>
     <div style="display: flex; justify-content: center; align-items: center">
         <input type="submit" value="Eliminar Producto" class="btn btn-primary" />
     </div>
 </form>
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>
