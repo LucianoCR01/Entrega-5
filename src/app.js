@@ -7,6 +7,8 @@ import { __dirname } from "./utils.js"
 import path from "path"
 import handlebars from "express-handlebars"
 import { Server } from "socket.io"
+import { productos } from "./clases/clases.product.js"
+
 
 const app = express()
 const PORT = 8080
@@ -18,9 +20,15 @@ const httpServer = app.listen(PORT, () => {
 const socketServer = new Server(httpServer)
 
 //FRONT del socket
+//agregar Productos
 socketServer.on("connection", (socket) => {
-    console.log("Se abrio un Socket" + socket.id)
-    socket.emit("msg", { msg: "hola" })
+    console.log("Se abrio un Socket " + socket.id)
+    socket.on("newProduct", async (newProduct) => {
+        console.log(newProduct)
+        productos.addProduct(newProduct)
+        const listProdSocke = productos.getProducts()
+        socket.emit("listProdSocke", listProdSocke)
+    })
 })
 
 app.use(express.json())
