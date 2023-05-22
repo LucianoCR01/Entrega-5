@@ -15,30 +15,6 @@ const inputThumbnail = document.getElementById("form-thumbnail");
 const formeliminar = document.getElementById("form-eliminar");
 const inputEliminar = document.getElementById("inputEliminar")
 
-
-socket.on("listProdSocke", listProdSocke => {
-    console.log(listProdSocke)
-    const productList = document.querySelector(".productListUpdated");
-    productList.innerHTML = `
-        ${listProdSocke
-            .map(
-                (product) => `
-         <tr>
-           <th scope="row">${product.id}</th>
-           <td>${product.title}</td>
-           <td>${product.description}</td>
-           <td>${product.price}</td>
-           <td>${product.code}</td>
-           <td>${product.stock}</td>
-             <td>${product.category}</td>
-            <td><img src="${product.thumbnail}" alt="${product.id}" title="Foto de ${product.title}" style="width: 50px; min-height: 100%; max-height: 50px;"></td>
-          </tr>
-        `
-            )
-            .join("")}
-      `;
-});
-
 formProducts.onsubmit = (e) => {
     e.preventDefault();
     const newProduct = {
@@ -54,6 +30,11 @@ formProducts.onsubmit = (e) => {
     socket.emit("newProduct", newProduct);
     formProducts.reset();
 };
+
+
+socket.on("listProdSocke", listProdSocke => {
+    window.location.reload();
+});
 
 formeliminar.onsubmit = (e) => {
     e.preventDefault();
