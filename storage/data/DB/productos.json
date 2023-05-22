@@ -72,23 +72,13 @@
     "id": "af08053f-d321-4101-8ed1-23a680e46966"
   },
   {
-    "title": "asdas",
-    "description": "123231",
-    "price": 45345,
-    "thumbnail": "4567467",
-    "code": "3563463546",
+    "title": "123125415",
+    "description": "34634634",
+    "price": 521354134,
+    "picture": "http://localhost:8080/manzana.jpg",
+    "code": "125415",
     "stock": 6456456,
-    "category": "45745756",
-    "id": "c1e11cc8-6d61-4e70-92df-6c7c7824b582"
-  },
-  {
-    "title": "2234234",
-    "description": "2342365",
-    "price": 456456,
-    "thumbnail": "http://localhost:8080/manzana.jpg",
-    "code": "768585",
-    "stock": 31231254,
-    "category": "35653635",
-    "id": "ca7f3e34-f48d-4f7b-83be-8f6f66940b78"
+    "category": "23541341",
+    "id": "6dcd8bf0-bed7-4061-ad34-ce6db9c18ab4"
   }
 ]
